@@ -12,3 +12,33 @@ Declarați o variabilă counterValue ce va stoca valoarea curentă a contorului 
 Adăugați click handler pe butoane, în interiorul cărora vei mări sau micșora valoarea contorului.
 Actualizați interfața cu noua valoare a variabilei counterValue.
 */
+
+let counterValue = 0; // Inițializăm valoarea contorului cu 0
+
+const valueElement = document.querySelector("#value");
+console.log(valueElement);
+const decrementButton = document.querySelector('[data-action="decrement"]');
+console.log(decrementButton);
+const incrementButton = document.querySelector('[data-action="increment"]');
+console.log(incrementButton);
+
+// Funcție pentru actualizarea valorii contorului și a interfeței
+function updateCounter(newValue) {
+  valueElement.textContent = newValue;
+  console.log(newValue);
+}
+
+// Adăugăm event listener pentru butonul de decrementare
+decrementButton.addEventListener("click", () => {
+  counterValue -= 1;
+  updateCounter(counterValue);
+});
+
+// Adăugăm event listener pentru butonul de incrementare
+incrementButton.addEventListener("click", () => {
+  counterValue += 1;
+  updateCounter(counterValue);
+});
+
+// Inițializăm interfața cu valoarea contorului curent
+updateCounter(counterValue);

@@ -37,3 +37,46 @@ const images = [
     alt: "Group of Horses Running",
   },
 ];
+
+// VARIANTA 1
+
+const imageList = document.querySelector(".gallery"); // am declarat o variabila imageList
+console.log(imageList); // m-am asigurat ca am selectat lista neordonata cu clasa gallery
+imageList.style.display = "flex";
+imageList.style.justifyContent = "space-evenly";
+
+/* aici o sa folosim foreach pentru a intera prin obiectul images */
+
+images.forEach((image) => {
+  const li = document.createElement("li"); // am creat li
+  console.log(li); // afisam li in consola
+  li.classList.add("item"); // aplicam clasa item la fiecare tag li introdus in caz ca avem nevoie pentru aplicare stiluri
+
+  const img = document.createElement("img"); // am creat li
+  img.setAttribute("src", `${image.url}`); // am adaugat atributul alt la fiecare img
+  img.setAttribute("alt", `${image.alt}`); // am adaugat atributul alt la fiecare img
+  console.log(img); //ma asigur ca acest img este creat in interiorul li-urilor
+  img.classList.add("image"); // aplicam clasa item la fiecare tag li introdus in caz ca avem nevoie pentru aplicare stiluri
+  img.style.width = "350px";
+
+  li.appendChild(img);
+  imageList.appendChild(li);
+});
+
+////VARIANTA 2
+
+const fotosList = document.querySelector(".gallery");
+
+// Aplică stilurile flexbox
+fotosList.style.display = "flex";
+fotosList.style.justifyContent = "space-evenly";
+
+images.forEach((image) => {
+  const imageHTML = `
+    <li class="item">
+      <img src="${image.url}" alt="${image.alt}" class="image" style="max-width: 350px;">
+    </li>
+  `;
+
+  fotosList.insertAdjacentHTML("beforeend", imageHTML);
+});
