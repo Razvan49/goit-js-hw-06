@@ -4,7 +4,8 @@ Scrieți un script care creează o galerie de imagini pe baza unei matrice cu da
 
 <ul class="gallery"></ul>
 
-Folosiți matricea de obiecte images, pentru a crea elementele <img> imbricate în <li>. Pentru a crea marcajul, vor fi de mare ajutor template strings și metoda insertAdjacentHTML().
+Folosiți matricea de obiecte images, pentru a crea elementele <img> imbricate în <li>. Pentru a crea marcajul, vor fi de mare 
+ajutor template strings și metoda insertAdjacentHTML().
 
 Toate elementele galeriei trebuie adăugate la DOM dintr-o singură operație.
 Adăugați un stil minim de poziționare a galeriei (flexbox sau grid) prin intermediul claselor CSS.
@@ -63,7 +64,7 @@ images.forEach((image) => {
   imageList.appendChild(li);
 });
 
-////VARIANTA 2
+////VARIANTA 2 cu insertAdjacentHTML
 
 const fotosList = document.querySelector(".gallery");
 
